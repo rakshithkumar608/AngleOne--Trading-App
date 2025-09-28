@@ -8,6 +8,7 @@ import Learn from '../Layout/Learn.jsx'
 import Calculator from '../Layout/Calculator.jsx'
 import TopStocks from '../Layout/TopStocks.jsx'
 import LegacySection from '../Layout/LegacySection.jsx'
+import DownloadSection from '../Layout/DownloadSection.jsx'
 
 
 
@@ -24,6 +25,7 @@ const HomePage = () => {
  <Calculator />
  <TopStocks />
  <LegacySection />
+ <DownloadSection />
     </div>
   )
 }
