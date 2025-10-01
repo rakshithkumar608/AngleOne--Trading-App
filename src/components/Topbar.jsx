@@ -1,7 +1,7 @@
 import React from 'react'
 import myImage from "../assets/ipl.webp";
 import { FaSearch } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Topbar = () => {
   const navigate = useNavigate();
@@ -11,11 +11,13 @@ const Topbar = () => {
       {/* Left Section */}
       <div className="flex items-center justify-between w-full md:w-auto">
         {/* Logo */}
+        <Link to='/' className='block'>
         <img
           src={myImage}
-          alt="IPL Logo"
+          alt="IPL Logo "
           className="h-12 w-auto cursor-pointer md:ml-80"
         />
+        </Link>
 
         {/* Mobile Login + CTA */}
         <div className="flex md:hidden space-x-2">

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage.jsx';
 import NewsPage from './News/NewsPage.jsx';
-import PricingPage from './pages/PricingPage.jsx';
+import PricingPage from './Pricing/PricingPage.jsx';
 import Layout from './components/Layout.jsx';
 import Img from './Img-Folder/Img.jsx';
 import Login from './pages/Login.jsx';
