@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import myImage from "../assets/side1.webp";
 import { useNavigate } from 'react-router-dom';
 import Hero1 from './Hero1.jsx';
@@ -6,6 +6,60 @@ import Hero1 from './Hero1.jsx';
 const Hero = () => {
   const navigate = useNavigate();
 
+  const [formData, setFormData ] = useState({
+   number: ''
+  });
+  const [errors, setErrors] = useState({
+   number:''
+  });
+
+  //regex patterns
+  const phoneRegex = /^[6-9]\d{9}$/;
+
+ const handleChange = (e) =>{
+   const {name, value} = e.target;
+   setFormData({
+    ...formData,
+    [name]:value
+   });
+
+
+  // clear errors when user starts typing
+  if (errors[name]) {
+    setErrors({
+      ...errors,
+      [name]:''
+    });
+  }
+};
+
+const validatedForm = () => {
+  let newErrors = {number:''};
+  let isValid = true;
+
+  //number validation
+if (!formData.number) {
+  newErrors.number = 'Phone Number is required';
+  isValid = false;
+  } else if (!phoneRegex.test(formData.number)) {
+    newErrors.number = 'Please enter a valid phone Number';
+    isValid = false;
+  }
+
+  setErrors(newErrors);
+  return isValid;
+};
+
+const handleGetStarted = () => {
+  if (validatedForm()) {
+    console.log('Number correct', formData);
+    alert('Redirected to register page');
+    navigate('/register')
+  }
+}
+
+
+ 
   return (
     <>
       <div className="flex flex-col md:flex-row items-center justify-between bg-gray-50 p-4 sm:p-6 md:p-12 rounded-xl shadow-md max-w-7xl mx-auto">
@@ -19,18 +73,29 @@ const Hero = () => {
           </p>
 
           {/* Input Field */}
-          <div className="flex flex-col sm:flex-row items-center mb-4 space-y-3 sm:space-y-0 sm:space-x-3">
-            <div className="flex items-center w-full sm:w-auto">
-              <span className="px-2 py-2 bg-gray-100 border border-r-0 border-gray-300 rounded-l-md text-gray-600 text-sm">
-                +91
-              </span>
-              <input
-                type="text"
-                placeholder="Enter your Mobile number"
-                className="flex-1 border border-gray-300 rounded-r-md px-3 py-2 outline-none focus:ring focus:ring-blue-300 text-sm sm:text-base"
-              />
-            </div>
-            <button className="w-full sm:w-auto bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition text-sm sm:text-base">
+          <div className="flex flex-col sm:flex-row items-center  space-y-3 sm:space-y-0 sm:space-x-3 w-full ">
+             <div className="flex w-100 max-w-xl mx-auto border border-gray-300 rounded-lg overflow-hidden ">
+          <span className="flex items-center px-3 bg-gray-50 text-gray-600 text-sm font-medium border-r border-gray-300">
+            +91
+          </span>
+          <input
+          value={formData.number}
+          onChange={handleChange}
+          name='number'
+            type="text"
+            placeholder="Enter Mobile Number"
+            className={` w-full px-4 py-3 border rounded-lg focus:outline-none focus:right-2 focus:ring-blue-500 focus:border-transparent ${
+              errors.number ? 'border-red-500' : 'border-gray-300 flex'
+            }`}
+       
+          />
+          {errors.number && (
+        <p className='text-red-500 text-xs mt-1'>{errors.number}</p>
+       )}
+          </div>
+            <button 
+            onClick={handleGetStarted}
+            className="w-full sm:w-auto bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition text-sm sm:text-base">
               Get Started
             </button>
           </div>
