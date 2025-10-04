@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { FaArrowRight } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import myImage from '../assets/sip.png'
