@@ -44,8 +44,23 @@ const NewsPage = () => {
     if(!formData.number) {
       newErrors.number = "Phone Number is required";
       isValid  = false;
+    } else if (!phoneRegex.test(formData.number)) {
+      newErrors.number = 'Please enter a valid phone Number';
+      isValid = false;
     }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+ const handleGetStarted = () =>{
+  if (validatedForm()) {
+    console.log('Number correct', formData);
+    alert('Gink generated Successful');
+    
   }
+ }
+
   const Topnews = [
     {
       imgSrc: img1,
@@ -169,8 +184,15 @@ const NewsPage = () => {
                 name='number'
                 type="text"
                 placeholder="Enter your mobile number"
-                className="flex-1 px-3 sm:px-4 py-3 rounded-lg bg-white text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm sm:text-base w-full"
+                className={`w-full text-black bg-white  px-4 py-3 border rounded-lg focus:outline-black focus:right-2 focus:ring-black focus:border-transparent ${
+                  errors.number ? 'border-red-500' : 'border-white'
+                }`}
               />
+              {
+                errors.number && (
+                  <p className='text-red-500 text-xs mt-1'>{errors.number}</p>
+                )
+              }
               <button 
               onClick={handleGetStarted}
               className="bg-blue-700 hover:bg-blue-800 px-4 sm:px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base whitespace-nowrap w-full sm:w-auto">
