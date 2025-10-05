@@ -1,10 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
 import myImage from "../assets/iphone-2x.webp";
 import Img1 from "../assets/app1.webp";
 import Img2 from "../assets/app2.webp"
 
 
+
 const DownloadSection = () => {
+
+
+  const [formData, setFormData] = useState({
+    number:''
+  });
+  const [errors, setErrors] = useState({
+    number:''
+  });
+
+  //regex patterns
+  const phoneRegex = /^[6-9]\d{9}$/;
+
+  const handleChange = (e) =>{
+    const {name, value} = e.target;
+    setFormData({
+      ...formData,
+      [name]:value
+    });
+
+    //clear errors when user starts typing
+    if(errors[name]){
+      setErrors({
+        ...errors,
+        [name]:''
+      });
+    }
+  };
+
+  const validatedForm = () =>{
+    let newErrors = {number:''};
+    let isValid = true;
+
+    //number validation
+    if(!formData.number) {
+      newErrors.number = 'This field is Required';
+      isValid = false;
+    } else if (!phoneRegex.test(formData.number)) {
+      newErrors.number = 'Enter the correct 10 digit mobile number';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  }
+
+  const handleGetStarted = () => {
+    if (validatedForm()) {
+      console.log('Number correct', formData);
+      alert("Register Succesful");
+      
+    }
+  }
+
   return (
     <div className='mx-4 sm:mx-8 md:mx-16 lg:mx-40 my-8 sm:my-16 md:my-20 lg:my-40 h-auto w-auto bg-gradient-to-br from-blue-600 to-blue-800 items-center justify-center p-4 sm:p-6 md:p-8 flex rounded-lg'>
       <div className="max-w-6xl w-full text-white flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-16 justify-center items-center">
@@ -44,11 +98,21 @@ const DownloadSection = () => {
           {/* Input section */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-6 w-full">
             <input
-              type="tel"
+            value={formData.number}
+            onChange={handleChange}
+              type="text"
+              name='number'
               placeholder="Enter your mobile number"
-              className="flex-1 px-3 sm:px-4 py-3 rounded-lg bg-white text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300 text-sm sm:text-base"
+              className={`w-full text-black bg-white  px-4 py-3 border rounded-lg focus:outline-black focus:right-2 focus:ring-black focus:border-transparent ${
+                errors.number ? 'border-red-500' : 'border-white '
+              }`}
             />
-            <button className="bg-blue-700 hover:bg-blue-800 px-4 sm:px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base whitespace-nowrap">
+            {errors.number && (
+              <p className='text-red-500 text-xs mt-1'>{errors.number}</p>
+            )}
+            <button 
+            onClick={handleGetStarted}
+            className="bg-blue-700 hover:bg-blue-800 px-4 sm:px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base whitespace-nowrap">
               Get Started
             </button>
           </div>
