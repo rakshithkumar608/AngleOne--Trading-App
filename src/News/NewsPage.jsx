@@ -8,6 +8,7 @@ import img6 from "../assets/Newss6.webp";
 import myImage from "../assets/iphone-2x.webp";
 import Img1 from "../assets/app1.webp";
 import Img2 from "../assets/app2.webp";
+import Announcement from './Announcement';
 
 const NewsPage = () => {
   const [formData, setFormData] = useState({
@@ -234,6 +235,7 @@ const NewsPage = () => {
           </div>
         </div>
       </div>
+      <Announcement />
     </div>
   );
 };
