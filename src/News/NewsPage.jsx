@@ -189,18 +189,19 @@ const NewsPage = () => {
                   errors.number ? 'border-red-500' : 'border-white'
                 }`}
               />
-              {
-                errors.number && (
-                  <p className='text-red-500 text-xs mt-1'>{errors.number}</p>
-                )
-              }
+              
+              
               <button 
               onClick={handleGetStarted}
               className="bg-blue-700 hover:bg-blue-800 px-4 sm:px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base whitespace-nowrap w-full sm:w-auto">
                 Get Started
               </button>
             </div>
-
+          {
+                errors.number && (
+                  <p className='text-red-500 text-xs '>{errors.number}</p>
+                )
+              }
             {/* Bottom section */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-4 sm:gap-6">
               
