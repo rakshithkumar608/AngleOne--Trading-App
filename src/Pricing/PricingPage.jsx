@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PricingPage2 from './PricingPage2';
 
 const PricingPage = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -70,7 +71,7 @@ const PricingPage = () => {
            className='bg-indigo-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-indigo-700 mt-4 shadow-md'>GET FREE DEMAT ACCOUNT</button>
         </div>
         </div>
-         
+         <PricingPage2 />
       </div>
   
   )
