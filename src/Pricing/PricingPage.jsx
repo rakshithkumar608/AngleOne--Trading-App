@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PricingPage2 from './PricingPage2';
+import Regulatory from './Regulatory';
 
 const PricingPage = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -72,6 +73,7 @@ const PricingPage = () => {
         </div>
         </div>
          <PricingPage2 />
+         <Regulatory />
       </div>
   
   )
