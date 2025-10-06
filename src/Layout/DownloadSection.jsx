@@ -107,16 +107,18 @@ const DownloadSection = () => {
                 errors.number ? 'border-red-500' : 'border-white '
               }`}
             />
-            {errors.number && (
-              <p className='text-red-500 text-xs mt-1'>{errors.number}</p>
-            )}
+        
             <button 
             onClick={handleGetStarted}
             className="bg-blue-700 hover:bg-blue-800 px-4 sm:px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base whitespace-nowrap">
               Get Started
             </button>
           </div>
-          
+          <div className=''>
+              {errors.number && (
+              <p className='text-red-500 text-xs mt-1'>{errors.number}</p>
+            )}
+            </div>
           {/* Bottom section - QR code and App Store buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-6">
             
