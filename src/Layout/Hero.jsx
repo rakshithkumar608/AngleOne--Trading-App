@@ -89,17 +89,18 @@ const handleGetStarted = () => {
             }`}
        
           />
-          {errors.number && (
-        <p className='text-red-500 text-xs mt-1'>{errors.number}</p>
-       )}
-          </div>
+         
+          </div> 
+         
             <button 
             onClick={handleGetStarted}
             className="w-full sm:w-auto bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition text-sm sm:text-base">
               Get Started
             </button>
           </div>
-
+ {errors.number && (
+        <p className='text-red-500 text-xs mt-1'>{errors.number}</p>
+       )}
           {/* Bottom Features */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 text-sm text-gray-700">
             <div>
