@@ -1,5 +1,6 @@
 import { Info } from 'lucide-react'
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const Regulatory = () => {
 
@@ -262,7 +263,12 @@ const Regulatory = () => {
 
           <p className='text-xl mt-5 font-normal text-gray-500'>Angel One provides you option to diversify your portfolio by investing in Stocks, Mutual Funds, ETFs, <br />US Stocks, Currencies, Commodities, Futures & Options, Bonds etc</p>
 
-          <button className='bg-blue-500  mt-8 p-3 border border-gray-200 shadow-md rounded-lg text-xl font-semibold text-white hover:bg-blue-600'>Get Free Demat Account</button>
+          <Link
+            to="/open-account"
+            className="inline-block bg-blue-500 mt-8 px-6 py-3 border border-gray-200 shadow-md rounded-lg text-xl font-semibold text-white hover:bg-blue-600"
+          >
+            Get Free Demat Account
+          </Link>
         </div>
       </div>
     </div>

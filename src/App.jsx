@@ -10,6 +10,8 @@ import Register from './pages/Register.jsx';
 import DematAccount from './pages/DematAccount.jsx';
 import SipCalculator from './pages/SipCalculator.jsx';
 import ExplorePage from './pages/ExplorePage.jsx';
+import Regulatory from './Pricing/Regulatory.jsx';
+import OpenAccount from './Pricing/OpenAccount.jsx';
 
 
 const App = () => {
@@ -26,6 +28,8 @@ const App = () => {
           <Route path='/demat' element={<DematAccount />}/>
        <Route path='/sip' element={<SipCalculator />}/>
        <Route path='/explore' element={<ExplorePage />}/>
+       <Route path='/' element={<Regulatory />}/>
+       <Route path='/open-account' element={<OpenAccount />}/>
       </Routes>
      </Layout>
     </Router>
