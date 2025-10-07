@@ -4,6 +4,7 @@ import img2 from "../assets/start-sip-handshake.svg"
 import img3 from "../assets/start-sip-app-touch.svg"
 import img4 from '../assets/start-sip-asset-estimation.svg'
 
+
 const ImgPage1 = () => {
 
   const sips = [
@@ -46,6 +47,7 @@ const ImgPage1 = () => {
 
   
   return (
+    <>
     <section className='min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8'>
       <div className='max-w-7xl mx-auto'> 
     <div className='text-center mb-16'>
@@ -75,6 +77,8 @@ const ImgPage1 = () => {
  </div>
 </div>
     </section>
+   
+    </>
   )
 }
 
