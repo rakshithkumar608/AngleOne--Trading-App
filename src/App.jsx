@@ -8,7 +8,7 @@ import Img from './Img-Folder/Img.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import DematAccount from './pages/DematAccount.jsx';
-import SipCalculator from './pages/SipCalculator.jsx';
+import SipCalculator from './SIP Calculator/SipCalculator.jsx';
 import ExplorePage from './pages/ExplorePage.jsx';
 import Regulatory from './Pricing/Regulatory.jsx';
 import OpenAccount from './Pricing/OpenAccount.jsx';
