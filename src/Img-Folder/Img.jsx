@@ -5,7 +5,8 @@ import img1 from "../assets/sip-graph-icon.svg"
 import img2 from "../assets/sip-journey.svg"
 import img3 from "../assets/zero-rupee.svg"
 import ImgPage1 from './ImgPage1'
-import MainImg from './MainImg'
+import CalculatorPage from './CalculatorPage'
+
 
 const Img = () => {
   const [mobileNumber, setMobileNumber] = useState('+91');
@@ -137,6 +138,7 @@ const Img = () => {
    
    <ImgPage1 />
 
+<CalculatorPage />
     </>
   )
 }
