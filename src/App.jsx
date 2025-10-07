@@ -14,6 +14,8 @@ import Regulatory from './Pricing/Regulatory.jsx';
 import OpenAccount from './Pricing/OpenAccount.jsx';
 import Sip1 from './SIP Calculator/Sip1.jsx';
 import Sip2 from './SIP Calculator/Sip2.jsx';
+import Investment from './Layout/Investment.jsx';
+import Lumpsum from './Img-Folder/Lumpsum.jsx';
 
 
 const App = () => {
@@ -24,14 +26,21 @@ const App = () => {
          <Route path="/" element={<HomePage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+
           <Route path='/img' element={<Img />}/>
+          <Route path='/investment' element={<Investment />}/>
+          <Route path='/lumsum' element={<Lumpsum />}/>
+
+
           <Route path='/login' element={<Login />}/>
           <Route path='/register' element={<Register />}/>
           <Route path='/demat' element={<DematAccount />}/>
+
           <Route path='/' element={<SipCalculator />}/>
        <Route path='/sip' element={<SipCalculator />}/>
        <Route path='/lumpsum' element={<Sip1 />}/>
        <Route path='advanced-sip' element={<Sip2 />}/>
+
        <Route path='/explore' element={<ExplorePage />}/>
        <Route path='/' element={<Regulatory />}/>
        <Route path='/open-account' element={<OpenAccount />}/>

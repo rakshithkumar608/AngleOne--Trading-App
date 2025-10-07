@@ -4,6 +4,7 @@ import img1 from "../assets/sip-graph-icon.svg"
 import img2 from "../assets/sip-journey.svg"
 import img3 from "../assets/zero-rupee.svg"
 import ImgPage1 from './ImgPage1'
+import MainImg from './MainImg'
 
 
 
@@ -131,6 +132,7 @@ const Img = () => {
       </div>
      </div>
    <ImgPage1 />
+   <MainImg />
     </>
   )
 }
