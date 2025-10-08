@@ -65,7 +65,7 @@ const FAQs = () => {
             <button 
             onClick={() =>toogleFAQ(index)}  className="w-full flex justify-between items-center text-left px-6 py-5 focus:outline-none">
              
-             <span className='text-gray-900 font-medium text-base'>{faq.question}</span>
+             <span className='text-gray-900 font-medium text-xl'>{faq.question}</span>
              {openIndex === index ? (
               <ChevronUp className='text-blue-600 w-5 h-5'/>
              ): (
@@ -74,7 +74,7 @@ const FAQs = () => {
             </button>
 
 
-         <div className={`px-6 pb-5 text-gray-600 text-sm leading-relaxed transition-all duration-300 ${
+         <div className={`px-6 pb-5 text-gray-600 text-lg leading-relaxed transition-all duration-300 ${
                 openIndex === index
                   ? "max-h-40 opacity-100"
                   : "max-h-0 opacity-0 overflow-hidden"
