@@ -39,11 +39,11 @@ const Testimonials = () => {
               className='w-12 h-12 rounded-full object-cover mr-4'
               />
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">{t.name}</h3>
-                <p className='text-gray-500 text-sm'>{t.location}</p>
+                <h3 className="text-2xl font-semibold text-gray-900">{t.name}</h3>
+                <p className='text-gray-500 text-xl'>{t.location}</p>
               </div>
              </div>
-             <p className='text-gray-700 text-sm leading-relaxed'>{t.text}</p>
+             <p className='text-gray-700 text-xl leading-relaxed'>{t.text}</p>
           </div>
         ))}
       </div>
