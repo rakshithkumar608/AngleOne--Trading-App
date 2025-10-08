@@ -7,6 +7,7 @@ import img3 from "../assets/zero-rupee.svg"
 import ImgPage1 from './ImgPage1'
 import InvestmentPage from './InvestmentPage'
 import SipOnline from './SipOnline'
+import Testimonials from './Testimonials'
 
 
 
@@ -141,6 +142,7 @@ const Img = () => {
    <ImgPage1 />
   <InvestmentPage />
   <SipOnline />
+  <Testimonials />
     </>
   )
 }
