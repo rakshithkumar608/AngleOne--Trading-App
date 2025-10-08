@@ -10,10 +10,15 @@ import { useLocation } from 'react-router-dom';
 const Layout = ({ children }) => {
   const location = useLocation();
 
+  // Routes where the entire layout (header + footer) is hidden
   const hideLayoutPaths = ["/login","/register"];
- 
-  const shouldHideLayout = hideLayoutPaths.includes(location.pathname)
 
+
+  // Routes where only the footer should be hidden
+  const hideFooterPaths = ["/demat"]
+ 
+  const shouldHideLayout = hideLayoutPaths.includes(location.pathname);
+  const shouldHideFooter = hideFooterPaths.includes(location.pathname);
 
 
   return (
@@ -23,15 +28,12 @@ const Layout = ({ children }) => {
      {!shouldHideLayout &&  <NavBar />}
        
       
-      {/* Main Content Area */}
-      <main className="flex-1">
-        {children}
-        
-      </main>
-      
-      {/* Footer */}
-    
- {  !shouldHideLayout &&  <Footer />}
+        {/* Main Content Area */}
+      <main className="flex-1">{children}</main>
+
+      {/* Footer (hidden only for certain pages) */}
+      {!shouldHideLayout && !shouldHideFooter && <Footer />}
+
     </div>
   );
 };
