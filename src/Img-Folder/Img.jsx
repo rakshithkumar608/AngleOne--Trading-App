@@ -13,8 +13,59 @@ import FAQs from './FAQs'
 
 
 const Img = () => {
-  const [mobileNumber, setMobileNumber] = useState('+91');
-  const navigate = useNavigate();  // Add this
+  const navigate = useNavigate();
+const [formData, setFormData] = useState({
+  number:''
+})
+const [errors, setErrors] = useState({
+  number:''
+})
+
+// regex patterns
+const phoneRegex = /^[6-9]\d{9}$/;
+
+const handleChange = (e) => {
+  const {name, value} = e.target;
+setFormData({
+    ...formData,
+    [name]:value
+  });
+
+  //clear errors when user starts typing
+  if(errors[name]) {
+    setErrors({
+      ...errors,
+      [name]:''
+    });
+  }
+};
+
+const validatedForm = () =>{
+  let newErrors = {number:''};
+  let isValid = true;
+
+
+  //number validation
+  if(!formData.number) {
+    newErrors.number = 'This field is Required';
+    isValid = false;
+  } else if(!phoneRegex.test(formData.number)) {
+    newErrors.number = 'Enter the correct 10 digit mobile number';
+    isValid = false;
+  }
+
+  setErrors(newErrors);
+  return isValid;
+}
+
+const handleGetStarted = () => {
+    if (validatedForm()) {
+      console.log('Number correct', formData);
+      alert("Register Succesful");
+      navigate('/register')
+      
+    }
+  }
 
   return (
     <> 
@@ -98,21 +149,31 @@ const Img = () => {
         <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden mb-4">
           <span className="px-3 py-2 text-gray-500 bg-gray-100 border-r border-gray-300">+91</span>
           <input 
-            value={mobileNumber}
-            onChange={(e) => setMobileNumber(e.target.value)}
+            value={formData.number}
+            onChange={handleChange}
             placeholder='Enter your Mobile No'
-            type='tel'
-            className='w-full px-3 py-2 focus:outline-none'
+            type='text'
+            name='number'
+            className={`w-full text-black bg-white  px-4 py-3 border rounded-lg focus:outline-black focus:right-2 focus:ring-black focus:border-transparent ${
+                errors.number ? 'border-red-500' : 'border-white '
+              }`}
           />
         </div>
+         <div className=''>
+              {errors.number && (
+              <p className='text-red-500 text-xs mt-1'>{errors.number}</p>
+            )}
+            </div>
 
         {/* Button */}
         <button 
-          onClick={() => navigate('/investment')}  // Navigate to calculator
+        onClick={handleGetStarted}
           className='w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg'
         >
           Start SIP Now
         </button>
+
+
 
         <div className="flex justify-between items-center mt-6 text-sm text-gray-700">
           <div className="text-center">
