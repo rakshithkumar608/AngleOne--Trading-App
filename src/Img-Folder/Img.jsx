@@ -9,6 +9,7 @@ import InvestmentPage from './InvestmentPage'
 import SipOnline from './SipOnline'
 import Testimonials from './Testimonials'
 import FAQs from './FAQs'
+import Download1 from './Download1'
 
 
 
@@ -206,6 +207,7 @@ const handleGetStarted = () => {
   <SipOnline />
   <Testimonials />
   <FAQs />
+  <Download1 />
     </>
   )
 }
