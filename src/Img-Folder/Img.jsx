@@ -6,6 +6,7 @@ import img2 from "../assets/sip-journey.svg"
 import img3 from "../assets/zero-rupee.svg"
 import ImgPage1 from './ImgPage1'
 import InvestmentPage from './InvestmentPage'
+import SipOnline from './SipOnline'
 
 
 
@@ -139,6 +140,7 @@ const Img = () => {
    
    <ImgPage1 />
   <InvestmentPage />
+  <SipOnline />
     </>
   )
 }
