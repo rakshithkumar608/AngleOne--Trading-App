@@ -1,11 +1,13 @@
 
 import React from 'react';
-import NavBar from './Navbar';
+import Navbar from "./Navbar";
+
 import Footer from './Footer';
 import Topbar from './Topbar';
 import { useLocation } from 'react-router-dom';
 
 
+console.log("Navbar loaded:", Navbar);
 
 const Layout = ({ children }) => {
   const location = useLocation();
