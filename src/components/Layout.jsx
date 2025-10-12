@@ -1,13 +1,13 @@
 
 import React from 'react';
-import Navbar from "./Navbar";
+import Navbar from './navbar'
 
 import Footer from './Footer';
 import Topbar from './Topbar';
 import { useLocation } from 'react-router-dom';
 
 
-console.log("Navbar loaded:", Navbar);
+
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
     <div className="min-h-screen flex flex-col">
       {/* Navigation Bar */}
     {!shouldHideLayout && <Topbar />}
-     {!shouldHideLayout &&  <NavBar />}
+     {!shouldHideLayout &&  <Navbar />}
        
       
         {/* Main Content Area */}
