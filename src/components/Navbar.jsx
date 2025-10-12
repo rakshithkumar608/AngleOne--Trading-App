@@ -56,8 +56,8 @@ const NavBar = () => {
 
   const handleLinkClick = (path) => {
     navigate(path);
-    setIsMenuOpen(false); // Close mobile menu after navigating
-    setOpenDropdownIndex(null); // Close any open dropdowns
+    setIsMenuOpen(false); 
+    setOpenDropdownIndex(null); 
   };
 
   return (
