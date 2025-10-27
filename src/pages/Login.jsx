@@ -75,7 +75,9 @@ const Login = () => {
               </div>
 
               {/* Process Button */}
-              <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-200 text-sm">
+              <button
+              onClick={() => navigate("/main")} 
+              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-200 text-sm">
                 PROCEED
               </button>
 

@@ -14,6 +14,7 @@ import Regulatory from './Pricing/Regulatory.jsx';
 import OpenAccount from './Pricing/OpenAccount.jsx';
 import Sip1 from './SIP Calculator/Sip1.jsx';
 import Sip2 from './SIP Calculator/Sip2.jsx';
+import MainPage from './Main/MainPage.jsx';
 
 
 
@@ -45,6 +46,7 @@ const App = () => {
        <Route path='/explore' element={<ExplorePage />}/>
        <Route path='/' element={<Regulatory />}/>
        <Route path='/open-account' element={<OpenAccount />}/>
+       <Route path='/main' element={<MainPage />}/>
       </Routes>
      </Layout>
     </Router>

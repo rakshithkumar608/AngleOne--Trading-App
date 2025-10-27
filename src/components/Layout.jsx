@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
   const location = useLocation();
 
   // Routes where the entire layout (header + footer) is hidden
-  const hideLayoutPaths = ["/login","/register"];
+  const hideLayoutPaths = ["/login","/register", "/main"];
 
 
   // Routes where only the footer should be hidden
